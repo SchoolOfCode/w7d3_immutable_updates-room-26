@@ -71,5 +71,11 @@ export function toggleTeaStatus(object) {
 // should give back:
 //    [{ task: "Cooking", completed: true }, { task: "Walking", completed: true }]
 export function toggleListItemCompleted(array, index) {
-      const oppositeComplete = [...array, array[index].completed:!object.completed]
+
+      function toggleCompleted(object) {
+      const diffObj = { ...object, completed: !object.completed };
+      return diffObj;
+      }
+      const oppositeComplete = replaceItem(array, toggleCompleted(array[index]), index);
+      return oppositeComplete;
 }
